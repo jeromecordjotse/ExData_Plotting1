@@ -13,7 +13,7 @@ readFileInto <- function(){
     if(!file.exists('./data.zip')){  ## unzip if dataset !exists
       download.file('https://raw.githubusercontent.com/jeromecordjotse/ExData_Plotting1/master/data.zip',destfile = './data.zip')
     }
-    unzip('./data.zip',exdir = "./data/")
+    unzip('./data.zip',exdir = "./")
   }
   dataSet <<- read.table('./data/household_power_consumption.txt', sep = ";", header=TRUE, na.strings = "?")
   dataSet <<- dataSet[complete.cases(dataSet),]
